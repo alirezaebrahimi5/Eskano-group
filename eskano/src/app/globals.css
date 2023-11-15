@@ -101,3 +101,40 @@ section {
   top: 0;
   z-index: 2;
 }
+
+.circle-1
+  {
+    position: absolute;
+    border-radius: 0%;
+    width: 30vw;
+    height: 50vh; 
+    background-color: #BE229C;
+    right:0;
+    filter: blur(100px);
+    opacity: 25%;
+  }
+
+  .circle-2
+  {
+    position: absolute;
+    border-radius: 0%;
+    width: 30vw;
+    height: 50vh; 
+    background-color: #7C3EFF;
+    left:0;
+    filter: blur(100px);
+    opacity: 30%;
+  }
+
+  .circle-3
+  {
+    position: absolute;
+    border-radius: 50%;
+    width: 20vw;
+    height: 30vh; 
+    background-color: #22B5BE;
+    bottom: 0;
+    left:0;
+    filter: blur(100px);
+    opacity: 30%;
+  }

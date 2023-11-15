@@ -2,10 +2,8 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from 'next/image'
-/*
- * Read the blog post here:
- * https://letsbuildui.dev/series/scroll-animations-with-framer-motion/scroll-linked-content-reveal-animation
- */
+
+
 export const ScrollAnimation = () => {
   const containerRef = useRef(null);
 
@@ -19,11 +17,11 @@ export const ScrollAnimation = () => {
     [0, 1],
     ["-100%", "0%"]
   );
-  const imageValue = useTransform(scrollYProgress, [0, 1], ["-100%", "0%"]);
+  const imageValue = useTransform(scrollYProgress, [0, 1], ["100%", "-25%"]);
   const topShadowValue = useTransform(
     scrollYProgress,
     [0, 1],
-    ["-25%", "100%"]
+    ["-75%", "150%"]
   );
 
   return (
@@ -37,7 +35,7 @@ export const ScrollAnimation = () => {
             className="bottom-shadow"
             style={{ translateX: bottomShadowValue }}
           />
-          <Image src='/assets/plant-1.jpg' alt="a green plant" width={500} height={500} />
+          <Image src='/assets/plant.png' alt="a green plant" width={500} height={500} />
           <motion.div
             className="top-shadow"
             style={{ translateX: topShadowValue }}
