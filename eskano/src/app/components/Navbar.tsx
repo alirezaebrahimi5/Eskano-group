@@ -2,30 +2,34 @@
 import React, { useState } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { AiOutlineClose } from "react-icons/ai";
+import Link from 'next/link';
+
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navLinks = [
-    { href: "#home", label: "Home" },
-    { href: "#about-us", label: "About Us" },
-    { href: "#products", label: "Products" },
-    { href: "#contact-us", label: "Contact Us" },
+    { href: "/", label: "صفحه اصلی" },
+    { href: "#about-us", label: "پروژه ها" },
+    { href: "#products", label: "وبلاگ" },
+    { href: "/travel", label: "سفر با ما" },
+    { href: "#contact-us", label: "تماس با ما" },
+    { href: "#contact-us", label: "تیم ما" },
   ];
   return (
     <>
       <header className="sm:px-8 px-4 py-2 w-full">
-        <nav className="flex justify-between items-center max-container">
-        <a href="/" className="text-3xl font-bold">
-            Logo
-        </a>
+        <nav className="flex justify-between items-center max-container px-32">
+        <Link href="/" className="text-3xl font-bold">
+            اسکانو
+        </Link>
         <ul className="flex-1 flex justify-center items-center gap-16 max-lg:hidden">
             {navLinks.map((item) => (
             <li key={item.label}>
-                <a
+                <Link
                 href={item.href}
                 className="font-montserrat leading-normal text-lg text-slate-gray"
                 >
                 {item.label}
-                </a>
+                </Link>
             </li>
             ))}
         </ul>
@@ -41,7 +45,7 @@ const Navbar = () => {
       </header>
       {isMenuOpen && (
         <div>
-          <nav className="fixed top-0 right-0 left-0 bottom-0 lg:bottom-auto bg-white">
+          <nav className="fixed top-0 right-0 left-0 bottom-0 lg:bottom-auto z-50 bg-white">
             <div
               className="hidden max-lg:block fixed right-0  px-8 py-4 cursor-pointer"
               onClick={() => {
@@ -53,12 +57,12 @@ const Navbar = () => {
             <ul className=" lg:hidden flex flex-col items-center justify-center h-full ">
               {navLinks.map((item) => (
                 <li key={item.label}>
-                  <a
+                  <Link
                     href={item.href}
                     className="font-montserrat leading-normal text-lg text-black"
                   >
                     {item.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

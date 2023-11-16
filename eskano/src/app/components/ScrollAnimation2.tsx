@@ -3,7 +3,7 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from 'next/image'
 
-export const ScrollAnimation = ({ children }) => {
+export const ScrollAnimation2 = ({ children }) => {
 
   const containerRef = useRef(null);
 
@@ -15,33 +15,33 @@ export const ScrollAnimation = ({ children }) => {
   const bottomShadowValue = useTransform(
     scrollYProgress,
     [0, 1],
-    ["0%", "200%"]
+    ["100%", "-200%"]
   );
-  const imageValue = useTransform(scrollYProgress, [0, 1], ["100%", "-15%"]);
+  const imageValue = useTransform(scrollYProgress, [0, 1], ["-100%", "15%"]);
   const topShadowValue = useTransform(
     scrollYProgress,
     [0, 1],
-    ["-100%", "150%"]
+    ["100%", "-200%"]
   );
 
   return (
     <>
         <section className="scroll-container" ref={containerRef}>
-        <div className="copy">
-          <h2>{ children }</h2>
-        </div>
         <div className="img-container">
           <motion.div className="img-inner" style={{ translateX: imageValue }}>
             <motion.div
-              className="bottom-shadow"
+              className="bottom-shadow2"
               style={{ translateX: bottomShadowValue }}
             />
             <Image src='/assets/plant.png' alt="a green plant" width={500} height={500} />
             <motion.div
-              className="top-shadow"
+              className="top-shadow2"
               style={{ translateX: topShadowValue }}
               />
           </motion.div>
+        </div>
+        <div className="copy">
+          <h2>{ children }</h2>
         </div>
       </section>
     </>
