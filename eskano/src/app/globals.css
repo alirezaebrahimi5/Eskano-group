@@ -2,8 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face { 
+  font-family: "Yekan"; 
+  src: url('/fonts/yekan/YekanBakh-Black.ttf'); 
+  font-weight: bold; 
+  font-style: normal; 
+} 
+  
+@font-face { 
+  font-family: "Yekan"; 
+  src: url('/fonts/yekan/YekanBakh-SemiBold.ttf'); 
+  font-weight: normal; 
+  font-style: normal; 
+}
+
+
+
 * {
   box-sizing: border-box;
+  font-family: 'Yekan' , sans-serif; 
 }
 
 html {

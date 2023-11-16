@@ -17,8 +17,8 @@ const Navbar = () => {
   return (
     <>
       <header className="sm:px-8 px-4 py-2 w-full">
-        <nav className="flex justify-between items-center max-container px-32">
-        <Link href="/" className="text-3xl font-bold">
+        <nav className="flex justify-between items-center max-container px-2 lg:px-32">
+        <Link href="/" className="text-3xl font-bold z-10 hidden lg:block">
             اسکانو
         </Link>
         <ul className="flex-1 flex justify-center items-center gap-16 max-lg:hidden">
@@ -26,7 +26,7 @@ const Navbar = () => {
             <li key={item.label}>
                 <Link
                 href={item.href}
-                className="font-montserrat leading-normal text-lg text-slate-gray"
+                className="font-medium leading-normal text-md text-slate-gray"
                 >
                 {item.label}
                 </Link>
@@ -34,7 +34,7 @@ const Navbar = () => {
             ))}
         </ul>
         <div
-            className="hidden max-lg:block cursor-pointer z-50"
+            className="hidden max-lg:block cursor-pointer z-50 justify-between"
             onClick={() => {
             setIsMenuOpen(!isMenuOpen);
             }}
