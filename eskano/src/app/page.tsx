@@ -1,6 +1,5 @@
 import Image from "next/image";
-import { ScrollAnimation } from "./components/ScrollAnimation";
-import { ScrollAnimation2 } from "./components/ScrollAnimation2";
+import Section_1 from "./components/Secion_1";
 
 import Header from "./components/Header";
 import Link from 'next/link'
@@ -11,6 +10,7 @@ export default function App() {
       <div className="w-full h-screen bg-cover">
         <Header />
       </div>
+      <Section_1 />
       <Link href={`/travel`} />
     </div>
   );
